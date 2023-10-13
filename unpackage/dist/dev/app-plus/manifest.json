@@ -35,14 +35,8 @@
     },
     "popGesture": "close",
     "launchwebview": {
-      "render": "always",
       "id": "1",
       "kernel": "WKWebview"
-    },
-    "statusbar": {
-      "immersed": "supportedDevice",
-      "style": "light",
-      "background": "#F8F8F8"
     },
     "usingComponents": true,
     "nvueStyleCompiler": "uni-app",
@@ -86,20 +80,84 @@
         }
       }
     },
+    "statusbar": {
+      "immersed": "supportedDevice",
+      "style": "dark",
+      "background": "#F8F8F8"
+    },
     "uniStatistics": {
       "enable": false
     },
     "allowsInlineMediaPlayback": true,
+    "safearea": {
+      "background": "#ffffff",
+      "bottom": {
+        "offset": "auto"
+      }
+    },
     "uni-app": {
       "control": "uni-v3",
       "vueVersion": "3",
-      "compilerVersion": "3.6.5",
+      "compilerVersion": "3.8.12",
       "nvueCompiler": "uni-app",
       "renderer": "auto",
       "nvue": {
         "flex-direction": "column"
       },
-      "nvueLaunchMode": "normal"
+      "nvueLaunchMode": "normal",
+      "webView": {
+        "minUserAgentVersion": "49.0"
+      }
+    },
+    "tabBar": {
+      "position": "bottom",
+      "color": "#7A7E83",
+      "selectedColor": "#1296db",
+      "borderStyle": "rgba(0,0,0,0.4)",
+      "blurEffect": "none",
+      "fontSize": "10px",
+      "iconWidth": "24px",
+      "spacing": "3px",
+      "height": "50px",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/imery/imery",
+          "iconPath": "/static/imgs/ruifamily.png",
+          "selectedIconPath": "/static/imgs/ruifamily-active.png",
+          "text": "睿家"
+        },
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "/static/imgs/index.png",
+          "selectedIconPath": "/static/imgs/index-active.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/film/film",
+          "iconPath": "/static/imgs/film.png",
+          "selectedIconPath": "/static/imgs/film-active.png",
+          "text": "电影/影院"
+        },
+        {
+          "pagePath": "pages/video/video",
+          "iconPath": "/static/imgs/video.png",
+          "selectedIconPath": "/static/imgs/video-active.png",
+          "text": "小视频"
+        },
+        {
+          "pagePath": "pages/mine/mine",
+          "iconPath": "/static/imgs/mine.png",
+          "selectedIconPath": "/static/imgs/mine-active.png",
+          "text": "我的"
+        }
+      ],
+      "selectedIndex": 0,
+      "shown": true,
+      "child": [
+        "lauchwebview"
+      ],
+      "selected": 0
     }
   },
   "launch_path": "__uniappview.html"

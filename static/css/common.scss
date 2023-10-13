@@ -1,0 +1,274 @@
+body,
+div,
+span,
+header,
+footer,
+nav,
+section,
+aside,
+article,
+ul,
+dl,
+dt,
+dd,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+textarea,
+button,
+input,
+select,
+figure,
+figcaption,
+{
+padding: 0;
+margin: 0;
+list-style: none;
+font-style: normal;
+text-decoration: none;
+border: none;
+color: #333;
+font-weight: normal;
+font-family: "Microsoft Yahei";
+box-sizing: border-box;
+-webkit-tap-highlight-color: transparent;
+-webkit-font-smoothing: antialiased;
+
+&:hover {
+  outline: none;
+}
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Microsoft YaHei";
+  color: #333;
+  background-color: #f6f6f6;
+	box-sizing: border-box;
+}
+
+/* 一行超出省略号 */
+.dv1{
+	white-space: nowrap;  
+	overflow: hidden;  
+	text-overflow: ellipsis;  
+	width: 100%;  
+}
+
+/* 超出两行省略号 */
+.dv2{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #F5F5F5;
+
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+//上下左右居中
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 左右居中
+.cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 上下居中
+.ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//盒子宽度
+@for $i from 1 through 75 {
+  .wdt#{$i} {
+    width: $i * 10rpx;
+  }
+
+  .ht#{$i} {
+    height: $i * 10rpx;
+  }
+}
+
+
+
+@for $i from 0 through 300 {
+	
+	.lh#{$i}{
+		line-height: $i * 1rpx;
+	}
+  .top#{$i} {
+    top: $i * 1rpx;
+  }
+
+  .lft#{$i} {
+    left: $i * 1rpx;
+  }
+
+  .btm#{$i} {
+    bottom: $i * 1rpx;
+  }
+
+  .rgt#{$i} {
+    right: $i * 1rpx;
+  }
+
+  //字体大小
+  .fs#{$i} {
+    font-size: $i * 1rpx;
+  }
+
+  //margin
+  .ml#{$i} {
+    margin-left: $i * 1rpx;
+  }
+
+  .mt#{$i} {
+    margin-top: $i * 1rpx;
+  }
+
+  .mr#{$i} {
+    margin-right: $i * 1rpx;
+  }
+
+  .mb#{$i} {
+    margin-bottom: $i * 1rpx;
+  }
+
+  //padding
+  .pl#{$i} {
+    padding-left: $i * 1rpx;
+  }
+
+  .pt#{$i} {
+    padding-top: $i * 1rpx;
+  }
+
+  .pr#{$i} {
+    padding-right: $i * 1rpx;
+  }
+
+  .pb#{$i} {
+    padding-bottom: $i * 1rpx;
+  }
+
+  .pad#{$i} {
+    padding: $i * 1rpx;
+  }
+
+  .padtb#{$i} {
+    padding-top: $i * 1rpx;
+    padding-bottom: $i * 1rpx;
+  }
+
+  .padlr#{$i} {
+    padding-left: $i * 1rpx;
+    padding-right: $i * 1rpx;
+  }
+
+  .br#{$i} {
+    border-radius: $i * 1rpx;
+  }
+}
+//透明度
+@for $i from 0 through 10{
+  .opt#{$i}{
+    opacity:$i * 0.1 ;
+  }
+}
+@each $i in ('000000','ffffff'){
+  .bgc#{$i}{
+    background:#{'#'+$i} ;
+  }
+  .clr#{$i}{
+    color:#{'#'+$i} ;
+  }
+}
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+//定位
+.pa {
+  position: absolute;
+}
+
+.pr {
+  position: relative;
+}
+
+.pf {
+  position: fixed;
+}
+.df{
+	display: flex;
+}
+.f1{
+	flex:1;
+}
+.shadow{
+	box-shadow: 5rpx 5rpx, -5rpx 5rpx, -5rpx -5rpx, 5rpx -5rpx grey; 
+}
+.tc{
+	text-align: center;
+}
+/* 底部安全距离 */
+.savepadding {
+  padding-bottom: constant(safe-area-inset-bottom);
+  /* 兼容 iOS < 11.2 */
+  padding-bottom: env(safe-area-inset-bottom);
+  /* 兼容 iOS >= 11.2 */
+}
